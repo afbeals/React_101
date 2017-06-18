@@ -15,7 +15,7 @@ class App extends React.Component {
 					</div>
 					<hr className="col-lg-12 col-md-6"/>
 					<div className="col-lg-12 col-md-6">
-						<Home />
+						<Home name={"Allan"} initialAge={28} />
 					</div>
 				</div>
 			</div>
