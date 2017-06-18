@@ -26,6 +26,7 @@ export class Home extends React.Component {
 	}
 
 	//view components life cycle
+	/*
 	 componentWillMount() {
         console.log("Component will mount");
     }
@@ -54,7 +55,7 @@ export class Home extends React.Component {
     componentWillUnmount() {
         console.log("Component will unmount");
     }
-
+	*/
 	render() {
 		return(
 			<div>

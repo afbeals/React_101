@@ -1,9 +1,14 @@
+import '../public/scss/basic.scss';
+
 import React from "react";
 import { render } from "react-dom";
+import { BrowserRouter as Router, Route, browserHistory, Switch } from "react-router-dom";
 
 import {Header} from "./components/Header.js";
 import {Home} from "./components/Home.js";
 import {SubText} from "./components/SubText.js";
+import {User} from "./components/User.js";
+import {Root} from "./components/Root.js";
 
 class App extends React.Component {
 	constructor(){
@@ -22,6 +27,19 @@ class App extends React.Component {
 
 	render() {
 		return (
+			<Router>
+			    <div>
+			      <Root>
+			        <Switch>
+			          <Route exact path="/" component={Home} />
+			          <Route path="/user" component={User} />
+			          <Route path="/home" component={Home} />
+			        </Switch>
+			      </Root>
+			    </div>
+			  </Router>
+
+/*
 			<div className="container">
 				<div className="row">
 					<div className="col-lg-12 col-md-12">
@@ -41,6 +59,9 @@ class App extends React.Component {
 				</div>
 			</div>
 		);
+	}
+	*/
+		)
 	}
 }
 
