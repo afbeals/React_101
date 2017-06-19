@@ -65,6 +65,10 @@ var config = {
 		extractPlugin,
 		new HTMLWebpackPlugin({
 			template: 'src/index.html'
+		}),
+		new webpack.ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery'
 		})
 	]
 };

@@ -1,5 +1,6 @@
 import '../public/scss/basic.scss';
 import '../public/img/01.jpg';
+import 'jquery';
 
 import React from "react";
 import { render } from "react-dom";
@@ -67,3 +68,7 @@ class App extends React.Component {
 }
 
 render(<App/>,window.document.getElementById('app'));
+
+$(document).ready(function(){
+		console.log("test");
+	})
