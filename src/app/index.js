@@ -1,4 +1,5 @@
 import '../public/scss/basic.scss';
+import '../public/img/01.jpg';
 
 import React from "react";
 import { render } from "react-dom";

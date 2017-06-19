@@ -65,6 +65,7 @@ export class Home extends React.Component {
 				<hr />
 				<input type="text" value={this.state.homeLink} onChange={(e)=>this.onHandleChange(e)}/>
 				<button onClick={() => this.onChangeLink()} className="btn btn-primary">Change Header Link</button>
+				<img src="/img/01.jpg" />
 			</div>	
 		);
 	}

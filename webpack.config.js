@@ -3,7 +3,8 @@ var webpack = require("webpack");
 var DIST_DIR = path.resolve(__dirname, "dist");
 var SRC_DIR = path.resolve(__dirname, "src");
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+var HTMLWebpackPlugin = require('html-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 var extractPlugin = new ExtractTextPlugin({
 	filename: "basic.css"
 });
@@ -13,7 +14,7 @@ var config = {
 	output: {
 		path: DIST_DIR + "/app",
 		filename: "bundle.js",
-		publicPath: "/dist"
+		//publicPath: "/dist"
 	},
 	module: {
 		rules: [
@@ -39,14 +40,32 @@ var config = {
 
 					]
 				})
-			}
+			},
+			{
+				test: /\.html$/,
+				use: ['html-loader']
+			},
+            {
+                test: /\.(jpg|png)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        query: {
+						  publicPath: 'img/',
+						  outputPath: 'img/',
+						  name: '[name].[ext]',
+						}
+                    }
+                ]
+            }
+
 		]
 	},
 	plugins: [
-		new webpack.optimize.UglifyJsPlugin({
-			//....
-		}),
-		extractPlugin
+		extractPlugin,
+		new HTMLWebpackPlugin({
+			template: 'src/index.html'
+		})
 	]
 };
 
